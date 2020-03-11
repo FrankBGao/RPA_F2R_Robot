@@ -1,0 +1,18 @@
+       [ {
+            "act": "click",
+            "element_fetch": {
+                "type": "xpath",
+                "argument": "html/body[1]/div[4]/div[1]/div[1]/div[4]/div[1]/form[1]/label[1]/input[1]"
+            }
+        },
+        {
+            "act": "send_keys",
+            "send_keys": "100",
+            "element_fetch": {
+                "type": "xpath",
+                "argument": "//*[@id='id_grade']"
+            }
+        }
+        ]
+
+        /tbody[1]/tr[1]

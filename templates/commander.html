@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Commander</title>
+
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    {#    <link href="static/css/style.css" rel="stylesheet">#}
+
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/commander.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+		<div class="col-md-12" >
+			<h3><img alt="Log" src="static/img/pads.png" />Robot Franker</h3>
+		</div>
+
+	</div>
+    <div class="row">
+		<div class="col-md-4">
+			<h4>
+				Saved Command
+			</h4>
+			<div id="card-711622">
+                {% for x in com_list %}
+				<div class="card">
+					<div class="card-header">
+                        <a style="color: black" class="card-link collapsed" data-toggle="collapse" data-parent="#card-711622" href="#card-element-{{ x.name }}">{{ x.name }}</a>
+					</div>
+					<div id="card-element-{{ x.name }}" class="collapse">
+						<div class="card-body">
+                            <a href="#" class="btn btn-secondary" type="RunThis" id="RunThis-{{ x.name }}" >RunThis</a>
+							<p>{{ x.command|safe }}<p>
+						</div>
+					</div>
+				</div>
+            {% endfor %}
+			</div>
+		</div>
+        <div class="col-md-4">
+            <h4 class="text-left">
+                Commander
+            </h4>
+            <input type="text" placeholder="Name" id="commandName">
+            <a href="#" class="btn btn-secondary" type="button" id="SaveCommand">Save</a>
+            <p>CommanderJson<p>
+            <form role="form">
+                <div class="form-group">
+                    <textarea class="form-control" rows="25" id="Command" placeholder="Json"></textarea>
+                </div>
+            </form>
+            <a href="#" class="btn btn-secondary" type="button" id="sendCommand">Run</a>
+
+        </div>
+        <div class="col-md-4">
+			<h4>
+				Message
+			</h4>
+            <p class="badge badge-default" id = "result">-</p>
+		</div>
+    </div>
+</div>
+
+
+</body>
+</html>
