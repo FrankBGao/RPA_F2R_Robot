@@ -67,4 +67,5 @@ In robot, we define this table as a key-value object.
 
 We assume any filed form has an instance ID.
 In a "table", the robot could search a certain filled form based on an instance ID.
- 
+Then, the robot will enter into the form, and transfer the information from the Excel file to the form
+![alt text](https://github.com/FrankBGao/RPA_F2R_Robot/blob/master/pic/robot.gif?raw=true "a form")
